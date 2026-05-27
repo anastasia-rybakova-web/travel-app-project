@@ -1,0 +1,239 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  guide
+  tourist
+}
+
+enum BookingStatus {
+  pending
+  confirmed
+  cancelled
+  rejected
+  done
+  cancel_requested
+}
+
+enum CancelRequestBy {
+  tourist
+  guide
+}
+
+model ErrorLog {
+  id          String   @id @default(cuid())
+  timestamp   DateTime @default(now())
+  method      String   
+  url         String   
+  statusCode  Int      
+  message     String   
+  stack       String?  
+  userId      Int?     
+  userRole    String?  
+  ip          String?  
+  userAgent   String?  
+  body        Json?    
+  query       Json?    
+  params      Json?    
+  
+  @@map("error_logs")
+}
+
+model User {
+  id            Int            @id @default(autoincrement())
+  username      String         @unique
+  password      String
+  role          UserRole
+  
+  guide         Guide?
+  tourist       Tourist?
+  placeReviews  PlaceReview[]
+  routeReviews  RouteReview[]
+  guideReviews  GuideReview[]
+  
+  @@map("users")
+}
+
+model Guide {
+  userId        Int            @id
+  name          String
+  about         String?
+  phone         String?
+  email         String?
+  photo         String?
+  rating        Decimal        @default(0) @db.Decimal(3,2)
+  
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  places        Place[]
+  routes        Route[]
+  bookings      Booking[]
+  reviews       GuideReview[]
+  
+  @@map("guides")
+}
+
+model Tourist {
+  userId        Int            @id
+  name          String
+  photo         String?
+  email         String?      
+  
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bookings      Booking[]
+  
+  @@map("tourists")
+}
+
+model Place {
+  id            Int            @id @default(autoincrement())
+  title         String
+  address       String
+  region        String
+  shortDescription String?
+  description   String?
+  tags          String[]
+  photos        String[]
+  rating        Decimal        @default(0) @db.Decimal(3,2)
+  guideUserId   Int?
+  
+  guide         Guide?         @relation(fields: [guideUserId], references: [userId], onDelete: SetNull)
+  routePlaces   RoutePlace[]
+  reviews       PlaceReview[]
+  
+  @@map("places")
+}
+
+model Route {
+  id            Int            @id @default(autoincrement())
+  title         String
+  shortDescription String?
+  description   String?
+  duration      String?
+  people        String?
+  price         String?
+  type          String?
+  photos        String[]
+  rating        Decimal        @default(0) @db.Decimal(3,2)
+  guideUserId   Int?
+  
+  guide         Guide?         @relation(fields: [guideUserId], references: [userId], onDelete: SetNull)
+  routePlaces   RoutePlace[]
+  routeDates    RouteDate[]
+  bookings      Booking[]
+  reviews       RouteReview[]
+  
+  @@map("routes")
+}
+
+model RoutePlace {
+  routeId       Int
+  placeId       Int
+  
+  route         Route          @relation(fields: [routeId], references: [id], onDelete: Cascade)
+  place         Place          @relation(fields: [placeId], references: [id], onDelete: Cascade)
+  
+  @@id([routeId, placeId])
+  @@map("route_places")
+}
+
+model RouteDate {
+  id            Int            @id @default(autoincrement())
+  routeId       Int
+  date          DateTime       @db.Date
+  
+  route         Route          @relation(fields: [routeId], references: [id], onDelete: Cascade)
+  
+  @@map("route_dates")
+}
+
+model Booking {
+  id            Int            @id @default(autoincrement())
+  routeId       Int
+  guideUserId   Int
+  touristUserId Int
+  date          DateTime       @db.Date
+  people        Int
+  fio           String
+  phone         String
+  email         String
+  note          String?
+  status        BookingStatus  @default(pending)
+  createdAt     DateTime       @default(now())
+  confirmedAt   DateTime?
+  completedAt   DateTime?
+  cancelledAt   DateTime?
+  
+  route         Route          @relation(fields: [routeId], references: [id], onDelete: Cascade)
+  guide         Guide          @relation(fields: [guideUserId], references: [userId], onDelete: Cascade)
+  tourist       Tourist        @relation(fields: [touristUserId], references: [userId], onDelete: Cascade)
+  cancelRequest CancelRequest?
+  
+  @@map("bookings")
+}
+
+model CancelRequest {
+  id            Int            @id @default(autoincrement())
+  bookingId     Int            @unique
+  date          DateTime
+  reason        String?
+  requestedBy   CancelRequestBy
+  isRejection   Boolean        @default(false)
+  
+  booking       Booking        @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  
+  @@map("cancel_requests")
+}
+
+model PlaceReview {
+  id            Int            @id @default(autoincrement())
+  placeId       Int
+  userId        Int
+  username      String?
+  photo         String?
+  rating        Decimal        @db.Decimal(3,2)
+  text          String?
+  createdAt     DateTime       @default(now())
+  
+  place         Place          @relation(fields: [placeId], references: [id], onDelete: Cascade)
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@map("place_reviews")
+}
+
+model RouteReview {
+  id            Int            @id @default(autoincrement())
+  routeId       Int
+  userId        Int
+  username      String?
+  photo         String?
+  rating        Decimal        @db.Decimal(3,2)
+  text          String?
+  createdAt     DateTime       @default(now())
+  
+  route         Route          @relation(fields: [routeId], references: [id], onDelete: Cascade)
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@map("route_reviews")
+}
+
+model GuideReview {
+  id            Int            @id @default(autoincrement())
+  guideUserId   Int
+  userId        Int
+  username      String?
+  photo         String?
+  rating        Decimal        @db.Decimal(3,2)
+  text          String?
+  createdAt     DateTime       @default(now())
+  
+  guide         Guide          @relation(fields: [guideUserId], references: [userId], onDelete: Cascade)
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@map("guide_reviews")
+}

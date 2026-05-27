@@ -1,0 +1,427 @@
+
+.place-form-card {
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+  padding: 35px;
+  margin: 40px auto;
+  border-radius: 16px;
+  max-width: 700px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-image: url("/images/mainpage/aboutsection.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box; 
+}
+
+.place-form-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+  border-radius: 16px;
+}
+
+.place-form-card > * {
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box; 
+}
+
+
+.place-form-card h2 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 10px;
+  color: #f2bb72;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.6);
+  line-height: 1.2; 
+}
+
+
+.place-form-card label {
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-top: 8px;
+  color: #f7f7f7;
+  display: block; 
+}
+
+.place-form-card input,
+.place-form-card textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 4px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.35);
+  transition: 0.25s;
+  box-sizing: border-box; 
+  border: 2px solid transparent; 
+}
+
+.place-form-card input:focus,
+.place-form-card textarea:focus {
+  background: rgba(255,255,255,0.22);
+  border-color: #f2bb72;
+  box-shadow: 0 0 10px rgba(242,187,114,0.5);
+  outline: none; 
+}
+
+.place-form-card textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit; 
+}
+
+.photo-add-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.photo-add-row input {
+  flex: 1;
+  margin-top: 0;
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+.photo-add-row .btn.gold {
+  margin-top: 0;
+  min-width: 100px;
+  box-sizing: border-box; 
+  white-space: nowrap; 
+}
+
+.photo-preview-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+  justify-content: flex-start;
+}
+
+.photo-preview {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.photo-preview img {
+  width: 130px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+  display: block; 
+}
+
+.delete-photo {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255,0,0,0.8);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; 
+  line-height: 1; 
+}
+
+
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box; 
+}
+
+.form-buttons .btn {
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+  font-size: 15px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.btn.gold,
+.btn.red {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn.gold {
+  background: #f2bb72;
+  color: #000;
+}
+
+.btn.gold:hover {
+  background: #d39c55;
+  transform: translateY(-2px);
+}
+
+.btn.red {
+  background: #ff544b;
+  color: #000;
+}
+
+.btn.red:hover {
+  background: #d84343; 
+  transform: translateY(-2px); 
+}
+
+
+.form-buttons .btn,
+.photo-add-row .btn.gold {
+  margin-top: 0;
+}
+
+
+@media (max-width: 1024px) {
+  .place-form-card {
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 90%;
+  }
+  
+  .place-form-card h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+  }
+  
+  .form-buttons {
+    gap: 12px;
+  }
+  
+  .form-buttons .btn {
+    padding: 11px 18px;
+    font-size: 14.5px;
+  }
+}
+
+@media (max-width: 767px) {
+  .place-form-card {
+    padding: 25px;
+    margin: 25px 15px;
+    gap: 14px;
+    max-width: calc(100% - 30px); 
+  }
+  
+  .place-form-card h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+  
+  .place-form-card input,
+  .place-form-card textarea {
+    padding: 11px 13px;
+    font-size: 14.5px;
+    width: 100%; 
+  }
+  
+  .photo-add-row {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .photo-add-row input {
+    width: 100%;
+  }
+  
+  .photo-add-row .btn.gold {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .photo-preview img {
+    width: 110px;
+    height: 85px;
+  }
+  
+  .photo-preview-list {
+    justify-content: center; 
+  }
+  
+  .form-buttons {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .form-buttons .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    min-width: auto; 
+  }
+}
+
+
+@media (max-width: 599px) {
+  .place-form-card {
+    padding: 22px;
+    margin: 20px 12px;
+    border-radius: 14px;
+    gap: 12px;
+    max-width: calc(100% - 24px); 
+  }
+  
+  .place-form-card h2 {
+    font-size: 26px;
+  }
+  
+  .place-form-card label {
+    font-size: 14px;
+  }
+  
+  .place-form-card input,
+  .place-form-card textarea {
+    padding: 10px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+  
+  .photo-preview-list {
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .photo-preview img {
+    width: 100px;
+    height: 80px;
+  }
+  
+  .delete-photo {
+    width: 22px;
+    height: 22px;
+    font-size: 13px;
+  }
+  
+  .form-buttons .btn {
+    padding: 11px;
+    font-size: 14.5px;
+  }
+}
+
+@media (max-width: 479px) {
+  .place-form-card {
+    padding: 20px 18px;
+    margin: 15px 10px;
+    gap: 10px;
+    max-width: calc(100% - 20px); 
+  }
+  
+  .place-form-card h2 {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+  
+  .place-form-card label {
+    font-size: 13.5px;
+    margin-top: 6px;
+  }
+  
+  .place-form-card input,
+  .place-form-card textarea {
+    padding: 9px 11px;
+    font-size: 13.5px;
+  }
+  
+  .photo-preview-list {
+    gap: 8px;
+  }
+  
+  .photo-preview img {
+    width: 90px;
+    height: 70px;
+  }
+  
+  .delete-photo {
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    right: 5px;
+  }
+  
+  .form-buttons {
+    margin-top: 12px;
+    gap: 8px;
+  }
+  
+  .form-buttons .btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .place-form-card {
+    padding: 18px 15px;
+    border-radius: 12px;
+    margin: 15px 8px;
+    max-width: calc(100% - 16px); 
+  }
+  
+  .place-form-card h2 {
+    font-size: 22px;
+  }
+  
+  .place-form-card label {
+    font-size: 13px;
+  }
+  
+  .place-form-card input,
+  .place-form-card textarea {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  
+  .photo-preview img {
+    width: 85px;
+    height: 65px;
+  }
+  
+  .form-buttons .btn {
+    padding: 9px;
+    font-size: 13.5px;
+  }
+}

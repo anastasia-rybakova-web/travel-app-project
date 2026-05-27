@@ -1,0 +1,487 @@
+.bookings-list {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.bookings-list h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-family: 'Triodion', serif;
+  font-weight: 400;
+}
+
+.guide-contacts-section {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(242, 187, 114, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.contacts-toggle-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #f2bb72 0%, #e5a85c 100%);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: 0 3px 12px rgba(242, 187, 114, 0.25);
+}
+
+.contacts-toggle-btn:hover {
+  background: linear-gradient(135deg, #e5a85c 0%, #d19448 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(242, 187, 114, 0.3);
+}
+
+.guide-contacts {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  border: 1px solid rgba(242, 187, 114, 0.3);
+}
+
+.guide-contacts h4 {
+  color: #1f3b26;
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(242, 187, 114, 0.4);
+}
+
+.guide-contacts p {
+  margin: 8px 0;
+  color: #444;
+  font-size: 15px;
+}
+
+.guide-contacts strong {
+  color: #1f3b26;
+  font-weight: 600;
+  min-width: 80px;
+  display: inline-block;
+}
+
+.guide-contacts .note {
+  color: #666;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(242, 187, 114, 0.3);
+}
+
+.bookings-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+  justify-content: center;
+}
+
+.bookings-tabs button {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+}
+
+.bookings-tabs button:hover {
+
+  background: rgba(255,255,255,0.22);
+  border-color: #f2bb72;
+
+}
+
+.bookings-tabs button.active {
+  background: #f2bb72;
+  border-color: #f2bb72;
+  color: #000;
+  font-weight: 600;
+}
+
+.no-bookings {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.booking-item {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  padding: 25px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+      border: 3px solid rgba(242, 187, 114, .2);
+  backdrop-filter: blur(8px);
+  position: relative;
+}
+
+.booking-item h3 {
+  color: #1f3b26;
+  font-size: 20px;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(242, 187, 114, 0.4);
+}
+
+.booking-item p {
+  margin: 8px 0;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.booking-item b {
+  color: #1f3b26;
+  font-weight: 600;
+  min-width: 150px;
+  display: inline-block;
+}
+
+/* СТАТУСЫ */
+.booking-item span[class^="status-"] {
+  /*padding: 4px 10px;*/
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  /*margin-left: 5px;*/
+}
+
+.status-pending {
+   /* background: #e5b86b73;*/
+    color: #895b17;
+   /* border: 1px solid rgba(255, 193, 7, .4);*/
+}
+.status-confirmed {
+    /*background: #559e5833;*/
+    color: #519354;
+   /* border: 1px solid rgba(76, 175, 80, .4);*/
+}
+
+.status-cancel_requested {
+   /* background: #e5b86b73;*/
+    color: #895b17;
+    /*border: 1px solid rgba(255, 193, 7, .4);*/
+}
+
+.status-done {
+/*background: #64a7dd33;*/
+    color: #4883b1;
+    /*border: 1px solid rgb(63 119 163 / 40%);*/
+}
+
+.status-rejected {
+    /*background: #e8857e33;*/
+    color: #884742;
+    /*border: 1px solid rgba(244, 67, 54, .4);*/
+}
+
+.status-cancelled {
+ /* background: rgba(158, 158, 158, 0.2);*/
+  color: #757575;
+  /*border: 1px solid rgba(158, 158, 158, 0.4);*/
+}
+
+
+.guide-bookings-booking-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(242, 187, 114, 0.3);
+}
+
+.guide-bookings-booking-actions button {
+  padding: 10px 8px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  max-width: 200px;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.accept-btn {
+   /* background: linear-gradient(135deg, #5b794bc4, #216433ba);*/
+    background: linear-gradient(135deg, #f4c374, #eeb967);
+    color: #fff;
+}
+
+.accept-btn:hover {
+ /*background: linear-gradient(135deg, #4e6840c4, #1a5128ba);*/
+ background: linear-gradient(135deg, #d7ab65, #d1a25b);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.reject-btn {
+     /*background: linear-gradient(135deg, #e32315b3, #b53f3ce6);*/
+  background: linear-gradient(135deg, #826542b3, #746046e6);
+  color: white;
+}
+
+.reject-btn:hover {
+  /* background: linear-gradient(135deg, #d11f12b3, #9c3432e6);*/
+    background: linear-gradient(135deg, #72593ab3, #60503be6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(244, 67, 54, 0.3);
+}
+
+.guide-bookings-cancel-btn {
+ /* background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);*/
+   background: linear-gradient(135deg, #826542b3, #746046e6);
+  color: white;
+  box-shadow: 0 3px 12px rgba(255, 107, 107, 0.25);
+}
+
+.guide-bookings-cancel-btn:hover {
+  /*background: linear-gradient(135deg, #ff5252 0%, #ff3838 100%);*/
+ background: linear-gradient(135deg, #72593ab3, #60503be6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.guide-bookings-complete-btn {
+  /*background: linear-gradient(135deg, #5181a8 0%, #5982a5 100%);*/
+    background: linear-gradient(135deg, #99aebf, #8ea1b2);
+  color: white;
+}
+
+.guide-bookings-complete-btn:hover {
+   /* background: linear-gradient(135deg, #467194 0%, #4b6e8c 100%);*/
+   background: linear-gradient(135deg, #8297a9, #7b90a3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+}
+
+.guide-bookings-contact-btn {
+  background: linear-gradient(135deg, #f2bb72 0%, #e5a85c 100%);
+  color: #000;
+}
+
+.guide-bookings-contact-btn:hover {
+  background: linear-gradient(135deg, #e5a85c 0%, #d19448 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(242, 187, 114, 0.3);
+}
+
+.confirm-cancel-btn {
+  /*background: linear-gradient(135deg, #ff5252 0%, #ff3838 100%);*/
+  background: linear-gradient(135deg, #826542b3, #746046e6);
+  color: white;
+}
+
+.confirm-cancel-btn:hover {
+  /*background: linear-gradient(135deg, #ff3838 0%, #ff1a1a 100%);*/
+   background: linear-gradient(135deg, #72593ab3, #60503be6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 82, 82, 0.3);
+}
+
+.reject-cancel-btn {
+  background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+  color: white;
+}
+
+.reject-cancel-btn:hover {
+  background: linear-gradient(135deg, #5a6268 0%, #495057 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+.cancel-request-box,
+.completed-info,
+.cancelled-info {
+  flex: 1 1 100%;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(242, 187, 114, 0.3);
+}
+
+.cancel-notice {
+  color: #ff9800;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.cancel-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.completed-info p,
+.cancelled-info p {
+  margin: 5px 0;
+  color: #444;
+  font-size: 14px;
+}
+
+.completed-info i,
+.cancelled-info i {
+  color: #666;
+}
+
+.tourist-contacts-section {
+  margin: 10px 0;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid #f2bb72;
+}
+
+.contacts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.tourist-contacts-toggle-btn {
+ background: #a3b1c2;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.tourist-contacts-toggle-btn:hover {
+  background: #8f9cab;
+}
+
+.tourist-contacts-details {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  margin-top: 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .bookings-list {
+    padding: 15px;
+  }
+  
+  .bookings-list h2 {
+    font-size: 24px;
+  }
+  
+  .bookings-tabs {
+    flex-direction: column;
+  }
+  
+  .bookings-tabs button {
+    min-width: 100%;
+  }
+  
+  .booking-item {
+    padding: 20px;
+  }
+  
+  .booking-item b {
+    min-width: 130px;
+  }
+  
+  .booking-actions {
+    flex-direction: column;
+  }
+  
+  .booking-actions button {
+    min-width: 100%;
+  }
+  
+  .cancel-actions {
+    flex-direction: column;
+  }
+
+  .contacts-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .tourist-contacts-toggle-btn {
+    align-self: flex-start;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .bookings-list {
+    padding: 10px;
+  }
+  
+  .bookings-list h2 {
+    font-size: 22px;
+  }
+  
+  .booking-item {
+    padding: 15px;
+  }
+  
+  .booking-item h3 {
+    font-size: 18px;
+  }
+  
+  .booking-item b {
+    min-width: 110px;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .booking-item p {
+    font-size: 14px;
+  }
+  
+  .guide-contacts-section {
+    padding: 15px;
+  }
+
+    .tourist-contacts-section {
+    padding: 10px;
+  }
+  
+  .tourist-contacts-details {
+    padding: 10px;
+  }
+}

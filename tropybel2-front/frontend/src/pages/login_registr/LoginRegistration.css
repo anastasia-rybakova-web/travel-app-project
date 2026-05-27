@@ -1,0 +1,298 @@
+
+.login-auth-page, 
+.register-auth-page {
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-image: url("/images/mainpage/aboutsection.jpg");
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+  color: #fff;
+}
+
+.login-auth-page::before,
+.register-auth-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+.login-auth-page > *, 
+.register-auth-page > * {
+  position: relative;
+  z-index: 2;
+}
+
+.login-auth-page h1,
+.register-auth-page h1 {
+  font-size: 42px;
+  margin-bottom: 30px;
+  color: #f2bb72;
+  text-shadow: 0 0 10px rgba(0,0,0,0.6);
+  font-family: 'Triodion', serif;
+  font-weight: 400;
+  margin-top: 30px;
+}
+
+.login-auth-form,
+.register-auth-form {
+  width: 60%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 32px 28px;
+  border-radius: 14px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+}
+
+.login-auth-form label,
+.register-auth-form label {
+  font-size: 15px;
+  opacity: 0.85;
+  margin-top: 6px;
+}
+
+.login-auth-form input,
+.register-auth-form input {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: 0.25s;
+  backdrop-filter: blur(3px);
+}
+
+.register-auth-form select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(40, 40, 40, 0.8); 
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: 0.25s;
+  backdrop-filter: blur(3px);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+   background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  padding-right: 40px;
+}
+
+.register-auth-form select option {
+  background-color: #2a2a2a;
+  color: #fff;
+  padding: 10px;
+}
+
+.login-auth-form input:focus,
+.register-auth-form input:focus,
+.register-auth-form select:focus {
+  border-color: #f2bb72;
+  background: rgba(255,255,255,0.25);
+}
+
+.login-auth-form button,
+.register-auth-form button {
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 17px;
+  border-radius: 8px;
+  background: rgba(242, 187, 114, 0.35);
+  border: 1px solid #f2bb72;
+  color: #f2bb72;
+  cursor: pointer;
+  transition: 0.25s;
+  font-weight: 600;
+  font-family: 'Arial', sans-serif;
+}
+
+.login-auth-form button:hover,
+.register-auth-form button:hover {
+  background: rgba(242, 187, 114, 0.55);
+}
+
+.auth-cancel-btn {
+  background: rgba(255, 80, 80, 0.35) !important;
+  border: 1px solid rgba(255, 80, 80, 1) !important;
+  color: #ffb3b3 !important;
+  margin-top: 4px;
+}
+
+.auth-cancel-btn:hover {
+  background: rgba(255, 60, 60, 0.55) !important;
+}
+
+.auth-validation-message {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin-bottom: 5px;
+  padding-left: 5px;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  opacity: 0.9;
+}
+
+.auth-error-message {
+  background: rgba(255, 80, 80, 0.35);
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.login-auth-page p {
+  margin-top: 15px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.login-auth-page a {
+  color: #f2bb72;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.login-auth-page a:hover {
+  text-decoration: none;
+  color: #e5a85c;
+}
+
+.auth-buttons-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .login-auth-page h1,
+  .register-auth-page h1 {
+    font-size: 36px;
+    margin-bottom: 25px;
+  }
+  
+  .login-auth-form,
+  .register-auth-form {
+    padding: 28px 24px;
+    gap: 5px;
+  }
+  
+  .login-auth-form input,
+  .register-auth-form input,
+  .register-auth-form select {
+    padding: 9px 12px;
+    font-size: 14.5px;
+  }
+  
+  .login-auth-form button,
+  .register-auth-form button {
+    padding: 11px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-auth-page, 
+  .register-auth-page {
+    padding: 40px 15px;
+  }
+  
+  .login-auth-page h1,
+  .register-auth-page h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .login-auth-form,
+  .register-auth-form {
+    padding: 22px 20px;
+    max-width: 80%;
+    gap: 5px;
+  }
+  
+  .login-auth-form input,
+  .register-auth-form input,
+  .register-auth-form select {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .login-auth-form label,
+  .register-auth-form label {
+    font-size: 14px;
+  }
+  
+  .login-auth-form button,
+  .register-auth-form button {
+    padding: 10px;
+    font-size: 15px;
+  }
+  
+  .login-auth-page p {
+    font-size: 14px;
+    text-align: center;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .login-auth-page, 
+  .register-auth-page {
+    padding: 30px 12px;
+  }
+  
+  .login-auth-page h1,
+  .register-auth-page h1 {
+    font-size: 26px;
+  }
+  
+  .login-auth-form,
+  .register-auth-form {
+    padding: 20px 16px;
+  }
+  
+  .login-auth-form input,
+  .register-auth-form input,
+  .register-auth-form select {
+    padding: 9px 10px;
+    font-size: 13.5px;
+  }
+  
+  .login-auth-form button,
+  .register-auth-form button {
+    padding: 9px;
+    font-size: 14px;
+  }
+  
+  .auth-error-message {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+  .auth-validation-message {
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+}

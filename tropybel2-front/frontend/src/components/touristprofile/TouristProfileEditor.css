@@ -1,0 +1,306 @@
+
+.tourist-profile-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #fff;
+}
+
+.tourist-profile-editor h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #f2bb72;
+  text-shadow: 0 0 8px rgba(0,0,0,0.45);
+  font-family: 'Triodion', serif;
+  font-weight: 400;
+}
+
+.tourist-profile-editor label {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #ffe7c4;
+  font-family: 'Arial', sans-serif;
+}
+
+.tourist-profile-editor input,
+.tourist-profile-editor textarea {
+  width: 100%;
+  padding: 14px 16px;
+ box-sizing: border-box;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 10px;
+
+  color: #fff;
+  font-size: 16px;
+  resize: none;
+  backdrop-filter: blur(4px);
+
+  transition: 0.25s;
+  font-family: 'Arial', sans-serif;
+}
+
+.tourist-profile-editor input:focus,
+.tourist-profile-editor textarea:focus {
+  outline: none;
+  border-color: #f2bb72;
+  background: rgba(255,255,255,0.20);
+}
+
+.tourist-profile-editor textarea {
+  min-height: 160px;
+}
+
+.tourist-profile-save-btn {
+  align-self: center;
+  width: fit-content;
+ box-sizing: border-box;
+  padding: 12px 28px;
+  margin-top: 10px;
+
+  background: rgba(242, 187, 114, 0.25);
+  border: 2px solid #f2bb72;
+  border-radius: 10px;
+
+  color: #f2bb72;
+  font-size: 18px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.25s;
+  backdrop-filter: blur(4px);
+  font-family: 'Arial', sans-serif;
+}
+
+.tourist-profile-save-btn:hover {
+  background: rgba(242, 187, 114, 0.35);
+  transform: translateY(-2px);
+}
+
+.tourist-profile-photo-preview {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  align-self: flex-start;
+}
+
+.tourist-profile-photo-preview img {
+  width: 130px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+  display: block;
+}
+
+.tourist-profile-delete-photo {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+
+  background: rgba(255, 0, 0, 0.9);
+  color: white;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.tourist-profile-delete-photo:hover {
+  background: rgba(255, 0, 0, 1);
+  transform: scale(1.15);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.tourist-profile-delete-photo::before {
+  content: "×";
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.tourist-profile-delete-photo > * {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .tourist-profile-editor h2 {
+    font-size: 28px;
+  }
+  
+  .tourist-profile-editor label {
+    font-size: 17px;
+  }
+  
+  .tourist-profile-editor input,
+  .tourist-profile-editor textarea {
+    padding: 13px 15px;
+    font-size: 15.5px;
+  }
+  
+  .tourist-profile-save-btn {
+    padding: 11px 26px;
+    font-size: 17px;
+  }
+  
+  .tourist-profile-photo-preview img {
+    width: 120px;
+    height: 95px;
+  }
+  
+  .tourist-profile-delete-photo {
+    width: 26px;
+    height: 26px;
+    top: -7px;
+    right: -7px;
+  }
+  
+  .tourist-profile-delete-photo::before {
+    font-size: 18px;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+  .tourist-profile-editor {
+    gap: 18px;
+  }
+  
+  .tourist-profile-editor h2 {
+    font-size: 26px;
+  }
+  
+  .tourist-profile-editor label {
+    font-size: 16px;
+  }
+  
+  .tourist-profile-editor input,
+  .tourist-profile-editor textarea {
+    padding: 12px 14px;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+  
+  .tourist-profile-save-btn {
+    padding: 10px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  
+  .tourist-profile-photo-preview img {
+    width: 110px;
+    height: 90px;
+  }
+  
+  .tourist-profile-delete-photo {
+    width: 24px;
+    height: 24px;
+    top: -6px;
+    right: -6px;
+  }
+  
+  .tourist-profile-delete-photo::before {
+    font-size: 16px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .tourist-profile-editor {
+    gap: 15px;
+  }
+  
+  .tourist-profile-editor h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .tourist-profile-editor label {
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+  
+  .tourist-profile-editor input,
+  .tourist-profile-editor textarea {
+    padding: 11px 12px;
+    font-size: 14px;
+  }
+  
+  .tourist-profile-save-btn {
+    padding: 10px 22px;
+    font-size: 15px;
+    width: 100%;
+    max-width: 200px;
+  }
+  
+    .tourist-profile-photo-preview img {
+    width: 100px;
+    height: 85px;
+  }
+  
+  .tourist-profile-delete-photo {
+    width: 22px;
+    height: 22px;
+    top: -5px;
+    right: -5px;
+    border-width: 1.5px;
+  }
+  
+  .tourist-profile-delete-photo::before {
+    font-size: 15px;
+  }
+  
+  .tourist-profile-editor textarea {
+    min-height: 140px;
+  }
+}
+
+@media (max-width: 360px) {
+  .tourist-profile-editor h2 {
+    font-size: 22px;
+  }
+  
+  .tourist-profile-editor label {
+    font-size: 14px;
+  }
+  
+  .tourist-profile-editor input,
+  .tourist-profile-editor textarea {
+    padding: 10px 12px;
+    font-size: 13.5px;
+  }
+  
+  .tourist-profile-save-btn {
+    padding: 9px 20px;
+    font-size: 14px;
+    max-width: 180px;
+  }
+  
+    .tourist-profile-photo-preview img {
+    width: 90px;
+    height: 80px;
+  }
+  
+  .tourist-profile-delete-photo {
+    width: 20px;
+    height: 20px;
+    top: -4px;
+    right: -4px;
+  }
+  
+  .tourist-profile-delete-photo::before {
+    font-size: 14px;
+  }
+}

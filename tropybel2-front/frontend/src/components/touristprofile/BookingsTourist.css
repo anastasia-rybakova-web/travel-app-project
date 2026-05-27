@@ -1,0 +1,334 @@
+
+.tourist-bookings {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.tourist-bookings h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-family: 'Triodion', serif;
+  font-weight: 400;
+}
+
+.tourist-booking-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 25px;
+  justify-content: center;
+}
+
+.tourist-booking-tabs button {
+  padding: 5px 5px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 155px;
+  text-align: center;
+}
+
+.tourist-booking-tabs button:hover {
+  background: rgba(114, 86, 52, 0.93);
+  border-color: #f2bb72;
+   color: #e2d0b9;
+}
+
+.tourist-booking-tabs button.active {
+    background: #f2bb72f3;
+    border-color: #f2bb72;
+    color: #5a3d0a;
+    font-weight: 600;
+}
+
+.no-bookings {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.booking-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  padding: 25px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  border: 3px solid rgb(214 164 97 / 88%);
+  backdrop-filter: blur(8px);
+  position: relative;
+}
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(242, 187, 114, 0.4);
+}
+
+.booking-header h3 {
+  color: #1f3b26;
+  font-size: 20px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.status-badge {
+ /* padding: 6px 12px;*/
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-pending {
+    /*background: #e5b86b73;*/
+    color: #895b17;
+    /*border: 1px solid rgba(255, 193, 7, .4);*/
+}
+
+.status-confirmed {
+    /*background: #559e5833;*/
+    color: #519354;
+    /*border: 1px solid rgba(76, 175, 80, .4);*/
+}
+
+.status-cancel_requested {
+    /*background: #e5b86b73;*/
+    color: #895b17;
+    /*border: 1px solid rgba(255, 193, 7, .4);*/
+}
+
+.status-done {
+/*background: #64a7dd33;*/
+    color: #4883b1;
+    /*border: 1px solid rgb(63 119 163 / 40%);*/
+}
+
+.status-rejected {
+   /* background: #e8857e33;*/
+    color: #884742;
+   /* border: 1px solid rgba(244, 67, 54, .4);*/
+}
+
+.status-cancelled {
+ /* background: rgba(158, 158, 158, 0.2);*/
+  color: #757575;
+  /*border: 1px solid rgba(158, 158, 158, 0.4);*/
+}
+
+.booking-details {
+  margin-bottom: 20px;
+}
+
+.booking-details p {
+  margin: 8px 0;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.booking-details b {
+  color: #1f3b26;
+  font-weight: 600;
+  min-width: 180px;
+  display: inline-block;
+}
+
+.booking-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(242, 187, 114, 0.3);
+}
+
+.booking-actions button {
+  padding: 8px 5px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  max-width: 200px;
+  text-align: center;
+}
+
+.tourist-bookings-cancel-btn {
+    color: #4c2525;
+    box-shadow: 0 3px 12px #44444475;
+       /* background: linear-gradient(135deg, #dd5050, #de6b6b);*/
+         background: linear-gradient(135deg, #826542b3, #746046e6);
+}
+
+.tourist-bookings-cancel-btn:hover {
+     /*background: linear-gradient(135deg, #ca4747, #d66161);*/
+ background: linear-gradient(135deg, #72593ab3, #60503be6);
+  transform: translateY(-2px);
+    box-shadow: 0 3px 12px #3b3b3b75;
+}
+
+.tourist-bookings-contact-btn {
+  background: linear-gradient(135deg, #f2bb72 0%, #e5a85c 100%);
+    color: #4c2525;
+    box-shadow: 0 3px 12px #44444475;
+}
+
+.tourist-bookings-contact-btn:hover {
+  background: linear-gradient(135deg, #e5a85c 0%, #d19448 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 12px #3a3a3a75;
+}
+
+.cancelling-info,
+.completed-info,
+.rejected-info {
+  flex: 1 1 100%;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(242, 187, 114, 0.3);
+}
+
+.cancelling-info p,
+.completed-info p,
+.rejected-info p {
+  margin: 5px 0;
+  color: #444;
+  font-size: 14px;
+}
+
+.cancelling-info i,
+.completed-info i,
+.rejected-info i {
+  color: #666;
+}
+
+.guide-contacts-popup {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  border: 2px solid #f2bb72;
+  box-shadow: 0 4px 15px rgba(242, 187, 114, 0.2);
+}
+
+.guide-contacts-popup h4 {
+  color: #1f3b26;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.guide-contacts-popup p {
+  margin: 8px 0;
+  color: #444;
+  font-size: 15px;
+}
+
+.guide-contacts-popup strong {
+  color: #1f3b26;
+  font-weight: 600;
+  min-width: 80px;
+  display: inline-block;
+}
+
+.close-contacts-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-contacts-btn:hover {
+  background: #5a6268;
+}
+
+@media (max-width: 768px) {
+  .tourist-bookings {
+    padding: 15px;
+  }
+  
+  .tourist-bookings h2 {
+    font-size: 24px;
+  }
+  
+  .tourist-booking-tabs {
+    flex-direction: column;
+  }
+  
+  .tourist-booking-tabs button {
+    min-width: 100%;
+  }
+  
+  .booking-card {
+    padding: 20px;
+  }
+  
+  .booking-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .booking-details b {
+    min-width: 140px;
+  }
+  
+  .booking-actions button {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .tourist-bookings {
+    padding: 10px;
+  }
+  
+  .tourist-bookings h2 {
+    font-size: 22px;
+  }
+  
+  .booking-card {
+    padding: 15px;
+  }
+  
+  .booking-header h3 {
+    font-size: 18px;
+  }
+  
+  .booking-details p {
+    font-size: 14px;
+  }
+  
+  .booking-details b {
+    min-width: 120px;
+  }
+  
+  .guide-contacts-popup {
+    padding: 15px;
+  }
+}

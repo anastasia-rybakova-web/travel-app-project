@@ -1,0 +1,147 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String
+  role      UserRole
+  company   String?
+  phone     String?
+  createdAt DateTime @default(now())
+
+  // Убираем onDelete из этих полей!
+  vacancies    Vacancy[]     @relation("AuthorVacancies")
+  applications Application[]
+  resumes      Resume[]
+  savedResumes SavedResume[]
+  reviews      Review[]
+
+  @@map("users")
+}
+
+model Vacancy {
+  id             Int             @id @default(autoincrement())
+  title          String
+  company        String
+  description    String
+  requirements   String
+  salary         String
+  location       String
+  experience     ExperienceLevel
+  employmentType EmploymentType
+  authorId       Int
+  skills         String[]
+  isActive       Boolean         @default(true)
+  createdAt      DateTime        @default(now())
+
+  // ТОЛЬКО ЗДЕСЬ указываем onDelete: Cascade!
+  author       User          @relation("AuthorVacancies", fields: [authorId], references: [id], onDelete: Cascade)
+  applications Application[] // Убрали onDelete отсюда
+  reviews      Review[] // Убрали onDelete отсюда
+
+  @@map("vacancies")
+}
+
+model Application {
+  id          Int               @id @default(autoincrement())
+  vacancyId   Int
+  userId      Int
+  status      ApplicationStatus @default(pending)
+  appliedAt   DateTime          @default(now())
+  coverLetter String?
+
+  // Здесь указываем onDelete: Cascade (на стороне с fields)
+  vacancy Vacancy @relation(fields: [vacancyId], references: [id], onDelete: Cascade)
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([vacancyId, userId])
+  @@map("applications")
+}
+
+model Resume {
+  id                 Int             @id @default(autoincrement())
+  position           String
+  experience         ExperienceLevel
+  skills             String[]
+  education          String?
+  salaryExpectations String?
+  about              String?
+  userId             Int
+  isActive           Boolean         @default(true)
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+
+  // Здесь указываем onDelete: Cascade
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  savedResumes SavedResume[] // Убрали onDelete отсюда
+
+  @@map("resumes")
+}
+
+model SavedResume {
+  id         Int      @id @default(autoincrement())
+  employerId Int
+  resumeId   Int
+  savedAt    DateTime @default(now())
+
+  // Здесь указываем onDelete: Cascade
+  employer User   @relation(fields: [employerId], references: [id], onDelete: Cascade)
+  resume   Resume @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+
+  @@unique([employerId, resumeId])
+  @@map("saved_resumes")
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  company   String
+  companyId String
+  userId    Int
+  userName  String
+  rating    Int
+  comment   String
+  date      DateTime @default(now())
+  vacancyId Int
+
+  // Здесь указываем onDelete: Cascade
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  vacancy Vacancy @relation(fields: [vacancyId], references: [id], onDelete: Cascade)
+
+  @@map("reviews")
+}
+
+enum UserRole {
+  job_seeker
+  employer
+}
+
+enum ExperienceLevel {
+  NO_EXPERIENCE
+  ONE_YEAR
+  ONE_TO_THREE_YEARS
+  THREE_TO_FIVE_YEARS
+  MORE_THAN_FIVE_YEARS
+}
+
+enum EmploymentType {
+  FULL_TIME
+  PART_TIME
+  INTERNSHIP
+  FLEXIBLE
+  REMOTE
+}
+
+enum ApplicationStatus {
+  pending
+  accepted
+  rejected
+}

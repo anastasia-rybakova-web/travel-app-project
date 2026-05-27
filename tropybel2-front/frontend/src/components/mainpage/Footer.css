@@ -1,0 +1,270 @@
+.footer {
+  background-color: #1c1c1c;
+  color: #ddd;
+  padding: 40px 0 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.footer__container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 30px; 
+}
+
+.footer__block {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer__text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+.footer__gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 5px; 
+}
+
+.footer__gallery-grid img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.footer__gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+.footer__contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6; 
+}
+
+.footer__contact-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; 
+}
+
+.footer__icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.footer__email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.footer__input,
+.footer__textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 14px;
+  box-sizing: border-box; 
+}
+
+.footer__input::placeholder,
+.footer__textarea::placeholder {
+  color: #999;
+}
+
+.footer__input:focus,
+.footer__textarea:focus {
+  border-color: #f8c045;
+  outline: none;
+}
+
+.footer__textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.footer__button {
+  background-color: #f0b15e;
+  color: #000;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+.footer__button:hover {
+  background-color: #6f593c;
+  color: #ffffff;
+}
+
+.footer__bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  margin-top: 40px;
+  font-size: 13px;
+  color: #888;
+}
+
+@media (max-width: 1000px) {
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .footer__block {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .footer__gallery-grid img {
+    height: 85px;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer {
+    padding: 30px 0 15px;
+  }
+  
+  .footer__container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    width: 95%;
+    max-width: 400px;
+  }
+  
+  .footer__title {
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .footer__text {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  
+  .footer__gallery-grid {
+    max-width: 280px;
+    margin: 10px auto 0; 
+  }
+  
+  .footer__gallery-grid img {
+    height: 75px;
+  }
+  
+  .footer__contact-list {
+    text-align: center;
+    white-space: normal;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .footer__contact-list li {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .footer__icon {
+    margin-right: 8px;
+  }
+  
+  .footer__email-form {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  
+  .footer__bottom {
+    margin-top: 30px;
+    padding-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__container {
+    gap: 20px;
+  }
+  
+  .footer__title {
+    font-size: 16px;
+  }
+  
+  .footer__text,
+  .footer__contact-list {
+    font-size: 13px;
+  }
+  
+  .footer__contact-list li {
+    margin-bottom: 8px;
+  }
+  
+  .footer__gallery-grid {
+    max-width: 250px;
+    gap: 8px;
+  }
+  
+  .footer__gallery-grid img {
+    height: 65px;
+  }
+  
+  .footer__icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .footer__input,
+  .footer__textarea {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  
+  .footer__textarea {
+    min-height: 70px;
+  }
+  
+  .footer__button {
+    padding: 9px;
+    font-size: 13px;
+  }
+  
+  .footer__bottom {
+    margin-top: 25px;
+    padding-top: 15px;
+    font-size: 12px;
+  }
+}

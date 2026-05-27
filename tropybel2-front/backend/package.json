@@ -1,0 +1,9 @@
+{
+  "name": "tropybel-backend",
+  "scripts": {
+    "start": "json-server --watch db.json --port 3001 --delay 300"
+  },
+  "dependencies": {
+    "json-server": "^0.17.4"
+  }
+}

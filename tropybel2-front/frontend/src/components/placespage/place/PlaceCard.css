@@ -1,0 +1,307 @@
+
+.place-card-item {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  width: 100%;
+}
+
+.place-card-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.place-card-image-wrapper {
+  position: relative;
+  height: 220px;
+}
+
+.place-card-image {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px 14px 0 0;
+  position: relative;
+}
+
+.place-card-title {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  max-width: calc(100% - 24px);
+  line-height: 1.2;
+}
+
+.place-card-main-tag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #f9ab30;
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 0 20px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.place-card-content {
+  padding: 24px 20px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.place-card-address {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.place-card-description {
+  flex-grow: 1;
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.place-card-details {
+  color: #444;
+  font-size: 14px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.place-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+  .place-card-rating {
+    font-size: 16px;
+    color: #e5b270;
+  font-weight: 600;
+  }
+  .place-card-rating::before {
+  content: "★";
+  font-size: 20px;
+}
+
+.place-card-button {
+  background: #f0b15e;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+  min-width: 110px;
+}
+
+.place-card-button:hover {
+  background: #6f593c;
+}
+
+@media (max-width: 1200px) {
+  .place-card-item {
+    max-width: 300px;
+  }
+  
+  .place-card-image-wrapper {
+    height: 200px;
+  }
+  
+  .place-card-title {
+    font-size: 19px;
+  }
+  
+  .place-card-main-tag {
+    font-size: 13.5px;
+    padding: 5px 14px;
+  }
+  
+  .place-card-content {
+    padding: 20px 18px 16px;
+  }
+  
+  .place-card-address {
+    font-size: 13.5px;
+  }
+  
+  .place-card-description {
+    font-size: 14.5px;
+  }
+  
+  .place-card-details {
+    font-size: 13.5px;
+  }
+  
+  .place-card-button {
+    font-size: 13.5px;
+    padding: 7px 16px;
+    min-width: 100px;
+  }
+  
+  .place-card-rating {
+    font-size: 15px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .place-card-item {
+    max-width: 280px;
+  }
+  
+  .place-card-image-wrapper {
+    height: 180px;
+  }
+  
+  .place-card-title {
+    font-size: 18px;
+  }
+  
+  .place-card-main-tag {
+    font-size: 13px;
+    padding: 5px 12px;
+  }
+  
+  .place-card-content {
+    padding: 18px 16px 14px;
+  }
+  
+  .place-card-address {
+    font-size: 13px;
+  }
+  
+  .place-card-description {
+    font-size: 14px;
+  }
+  
+  .place-card-details {
+    font-size: 13px;
+  }
+  
+  .place-card-button {
+    font-size: 13px;
+    padding: 7px 14px;
+    min-width: 95px;
+  }
+  
+}
+
+@media (max-width: 580px) {
+  .place-card-item {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  .place-card-image-wrapper {
+    height: 160px;
+  }
+  
+  .place-card-title {
+    font-size: 17px;
+    top: 10px;
+    left: 10px;
+    max-width: calc(100% - 20px);
+  }
+  
+  .place-card-main-tag {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+  
+  .place-card-content {
+    padding: 18px 14px 12px;
+  }
+  
+  .place-card-address {
+    font-size: 12.5px;
+    margin-bottom: 6px;
+  }
+  
+  .place-card-description {
+    font-size: 13px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  
+  .place-card-details {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .place-card-button {
+    font-size: 12px;
+    padding: 6px 12px;
+    min-width: 90px;
+  }
+  
+  .place-card-rating {
+    font-size: 14px;
+    color: #e5b270;
+  }
+}
+
+@media (max-width: 360px) {
+  .place-card-item {
+    max-width: 260px;
+  }
+  
+  .place-card-image-wrapper {
+    height: 150px;
+  }
+  
+  .place-card-title {
+    font-size: 16px;
+  }
+  
+  .place-card-main-tag {
+    font-size: 11.5px;
+    padding: 4px 8px;
+  }
+  
+  .place-card-content {
+    padding: 16px 12px 10px;
+  }
+  
+  .place-card-address {
+    font-size: 12px;
+  }
+  
+  .place-card-description {
+    font-size: 12.5px;
+  }
+  
+  .place-card-details {
+    font-size: 11.5px;
+  }
+  
+  .place-card-button {
+    font-size: 11.5px;
+    padding: 5px 10px;
+    min-width: 85px;
+  }
+  
+  .place-card-rating {
+    font-size: 13px;
+    color: #e5b270;
+  }
+}

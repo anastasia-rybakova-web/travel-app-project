@@ -1,0 +1,72 @@
+// === АВТОРИЗАЦИЯ (AUTH) ===
+// POST   /api/auth/register                     | Регистрация нового пользователя. Доступ: [Guest]
+// POST   /api/auth/login                        | Вход в систему. Доступ: [Guest]
+// GET    /api/auth/profile                      | Получение профиля текущего пользователя. Доступ: [User]
+
+// === ГИДЫ (GUIDES) ===
+// GET    /api/guides                            | Список всех гидов с количеством маршрутов. Доступ: [All]
+// GET    /api/guides/:userId                    | Получить информацию о гиде по ID. Доступ: [All]
+// GET    /api/guides/profile/:userId            | Получить профиль гида (для редактирования). Доступ: [Guide (свой)]
+// PUT    /api/guides/profile/:userId            | Обновить профиль гида. Доступ: [Guide (свой)]
+
+// === ТУРИСТЫ (TOURISTS) ===
+// GET    /api/tourists                          | Список всех туристов. Доступ: [Guide]
+// GET    /api/tourists/:userId                  | Получить информацию о туристе по ID. Доступ: [User (свой), Guide]
+// GET    /api/tourists/profile/:userId          | Получить профиль туриста. Доступ: [Tourist (свой)]
+// PUT    /api/tourists/profile/:userId          | Обновить профиль туриста. Доступ: [Tourist (свой)]
+// GET    /api/tourists/:userId/bookings         | Получить все бронирования туриста. Доступ: [Tourist (свой), Guide]
+// GET    /api/tourists/:userId/history          | Получить историю завершенных поездок. Доступ: [Tourist (свой)]
+// GET    /api/tourists/:userId/upcoming         | Получить предстоящие туры. Доступ: [Tourist (свой)]
+// GET    /api/tourists/:userId/pending          | Получить заявки на рассмотрении. Доступ: [Tourist (свой)]
+
+// === МЕСТА (PLACES) ===
+// GET    /api/places                            | Список всех мест. Доступ: [All]
+// GET    /api/places/best                       | Получить лучшие места (по рейтингу). Доступ: [All]
+// GET    /api/places/region/:region             | Получить места по области. Доступ: [All]
+// GET    /api/places/guide/:guideUserId         | Получить места, созданные гидом. Доступ: [All]
+// GET    /api/places/search                     | Поиск мест по параметрам. Доступ: [All]
+// GET    /api/places/:id                        | Получить место по ID. Доступ: [All]
+// POST   /api/places                            | Создать новое место. Доступ: [Guide]
+// PUT    /api/places/:id                        | Обновить место. Доступ: [Guide (своё)]
+// DELETE /api/places/:id                        | Удалить место. Доступ: [Guide (своё)]
+
+// === МЕСТА - ОТЗЫВЫ (PLACE REVIEWS) ===
+// GET    /api/places/:id/reviews                | Получить отзывы о месте. Доступ: [All]
+// POST   /api/places/:id/reviews                | Добавить отзыв о месте. Доступ: [User]
+// PUT    /api/places/reviews/:reviewId          | Обновить отзыв о месте. Доступ: [Author]
+// DELETE /api/places/reviews/:reviewId          | Удалить отзыв о месте. Доступ: [Author, Admin]
+
+// === МАРШРУТЫ (ROUTES) ===
+// GET    /api/routes                            | Список всех маршрутов. Доступ: [All]
+// GET    /api/routes/popular                    | Получить популярные маршруты. Доступ: [All]
+// GET    /api/routes/guide/:guideUserId         | Получить маршруты гида. Доступ: [All]
+// GET    /api/routes/search                     | Поиск маршрутов по ключевым словам. Доступ: [All]
+// GET    /api/routes/search/filters             | Расширенный поиск маршрутов. Доступ: [All]
+// GET    /api/routes/:id                        | Получить маршрут по ID. Доступ: [All]
+// GET    /api/routes/:id/full                   | Получить маршрут со всеми данными (места, даты, отзывы). Доступ: [All]
+// POST   /api/routes                            | Создать новый маршрут. Доступ: [Guide]
+// PUT    /api/routes/:id                        | Обновить маршрут. Доступ: [Guide (свой)]
+// DELETE /api/routes/:id                        | Удалить маршрут. Доступ: [Guide (свой)]
+
+// === МАРШРУТЫ - ОТЗЫВЫ (ROUTE REVIEWS) ===
+// GET    /api/routes/:routeId/reviews           | Получить отзывы о маршруте. Доступ: [All]
+// POST   /api/routes/:routeId/reviews           | Добавить отзыв о маршруте. Доступ: [Tourist (был на маршруте)]
+// PUT    /api/routes/reviews/:reviewId          | Обновить отзыв о маршруте. Доступ: [Author]
+// DELETE /api/routes/reviews/:reviewId          | Удалить отзыв о маршруте. Доступ: [Author, Admin]
+
+// === БРОНИРОВАНИЯ (BOOKINGS) ===
+// POST   /api/bookings                          | Создать бронирование. Доступ: [Tourist]
+// GET    /api/bookings/guide/:guideUserId       | Получить бронирования гида. Доступ: [Guide (свои)]
+// GET    /api/bookings/tourist/:touristUserId   | Получить бронирования туриста. Доступ: [Tourist (свои)]
+// GET    /api/bookings/route/:routeId           | Получить бронирования маршрута на дату. Доступ: [All]
+// GET    /api/bookings/check-completed/:routeId | Проверить, был ли турист на маршруте. Доступ: [Tourist]
+// PATCH  /api/bookings/:id/status               | Обновить статус бронирования. Доступ: [Guide (свои)]
+// POST   /api/bookings/:id/cancel-request       | Запросить отмену бронирования. Доступ: [Tourist, Guide]
+// POST   /api/bookings/:id/reject-cancel        | Отклонить запрос на отмену. Доступ: [Guide]
+// PATCH  /api/bookings/:id/complete             | Завершить бронирование. Доступ: [Guide]
+
+// === ОТЗЫВЫ О ГИДАХ (GUIDE REVIEWS) ===
+// GET    /api/reviews/guides/:guideUserId       | Получить отзывы о гиде. Доступ: [All]
+// POST   /api/reviews/guides/:guideUserId       | Добавить отзыв о гиде. Доступ: [Tourist (был на маршруте)]
+// PUT    /api/reviews/guides/:reviewId          | Обновить отзыв о гиде. Доступ: [Author]
+// DELETE /api/reviews/guides/:reviewId          | Удалить отзыв о гиде. Доступ: [Author, Admin]

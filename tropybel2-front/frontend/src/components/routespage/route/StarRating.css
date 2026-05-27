@@ -1,0 +1,47 @@
+.routes-stars {
+  display: flex;
+  gap: 4px;
+}
+
+.routes-star-wrapper {
+  position: relative;
+  width: 24px;
+}
+
+.routes-star {
+  font-size: 26px;
+  cursor: pointer;
+  color: #e0b76a;
+}
+
+.routes-star.full::before {
+  content: "★";
+}
+
+.routes-star.empty::before {
+  content: "★";
+  color: #bbb; 
+}
+
+.routes-star.half::before {
+  content: "★";
+  background: linear-gradient(90deg, #e0b76a 50%, #bbb 50%);
+  background-clip: text;
+  color: transparent;
+}
+
+
+.half-area {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+@media (max-width: 480px) {
+  .routes-star {
+  font-size: 20px;
+  cursor: pointer;
+  color: #e0b76a;
+}
+}

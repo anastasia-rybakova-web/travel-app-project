@@ -1,0 +1,133 @@
+.search-pesult-section {
+ width: 100%;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.search-pesult-container {
+  padding: 60px 20px;
+
+  min-height: 70vh;
+  background: #f8fafc;
+}
+
+.search-pesult-container h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.search-pesult-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #e5b270;
+  border-radius: 2px;
+}
+
+.search-pesult-params {
+  background: white;
+  padding: 20px 25px;
+  border-radius: 12px;
+  margin: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.search-pesult-params p {
+  color: #2d3748;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.search-pesult-no-results-message {
+  text-align: center;
+  font-size: 1.15rem;
+  color: #718096;
+  margin: 40px 0;
+  padding: 0;
+}
+
+.search-pesult-places-page-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin: 30px;
+}
+
+@media (max-width: 1024px) {
+  .search-pesult-container {
+    max-width: 960px;
+    padding: 40px 20px;
+  }
+  
+  .search-pesult-places-page-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .search-pesult-container h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-pesult-container {
+    padding: 30px 15px;
+  }
+  
+  .search-pesult-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+  
+  .search-pesult-params {
+    padding: 16px 20px;
+    margin: 15px;
+  }
+  
+  .search-pesult-places-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 500px;
+    margin: 20px;
+  }
+  
+  .search-pesult-no-results-message {
+    font-size: 1.1rem;
+    margin: 30px 0;
+  }
+}
+
+@media (max-width: 500px) {
+    .search-pesult-places-page-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    min-width: 200px;
+    margin: 20px;
+  }
+  .search-pesult-container {
+    padding: 25px 12px;
+  }
+  
+  .search-pesult-container h2 {
+    font-size: 1.6rem;
+  }
+  
+  .search-pesult-params {
+    padding: 14px 16px;
+  }
+  
+  .search-no-results-message {
+    font-size: 1rem;
+  }
+}

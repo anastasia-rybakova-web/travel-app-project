@@ -1,0 +1,122 @@
+
+.upcoming-tourist {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.upcoming-tourist h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-family: 'Triodion', serif;
+  font-weight: 400;
+}
+
+.upcoming-booking-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  padding: 25px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+border: 3px solid rgb(214 164 97 / 88%);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.upcoming-booking-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  border-color: rgba(242, 187, 114, 0.4);
+}
+
+.upcoming-booking-card h3 {
+  color: #1f3b26;
+  font-size: 20px;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(242, 187, 114, 0.4);
+}
+
+.upcoming-booking-card p {
+  margin: 10px 0;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.upcoming-booking-card .status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  color: #558a63;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Triodion', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.upcoming-booking-card .details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.upcoming-booking-card .detail-item {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  border: 1px solid rgba(242, 187, 114, 0.2);
+}
+
+.upcoming-booking-card .detail-item b {
+  color: #1f3b26;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.upcoming-booking-card .detail-item span {
+  color: #444;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .upcoming-tourist {
+    padding: 15px;
+  }
+  
+  .upcoming-tourist h2 {
+    font-size: 24px;
+  }
+  
+  .upcoming-booking-card {
+    padding: 20px;
+  }
+  
+  .upcoming-booking-card h3 {
+    font-size: 18px;
+  }
+  
+  .upcoming-booking-card .details-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .upcoming-tourist {
+    padding: 10px;
+  }
+  
+  .upcoming-tourist h2 {
+    font-size: 22px;
+  }
+  
+  .upcoming-booking-card {
+    padding: 15px;
+  }
+}

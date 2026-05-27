@@ -1,0 +1,128 @@
+.tours-routes-container {
+  padding: 60px 20px 70px;
+  background: #f7f9f8;
+}
+
+.tours-routes-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.tours-routes-header h2 {
+  font-size: 34px;
+  margin-bottom: 12px;
+  color: #2e2e2e;
+  position: relative;
+}
+
+.tours-routes-divider {
+  display: block;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.tours-routes-divider .tours-routes-line {
+  color: #000; 
+  margin: 0 5px;
+}
+
+.tours-routes-divider .tours-routes-dots {
+  color: #e5b270; 
+  margin: 0 5px;
+}
+
+.tours-routes-header p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #555;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.tours-routes-grid {
+  display: grid;
+  gap: 28px;
+  justify-content: center;
+}
+
+@media (min-width: 1201px) {
+  .tours-routes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+ .tour-card:hover {
+    transform: translateY(-6px);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .tours-routes-container {
+  padding: 40px 20px 60px;
+}
+  .tours-routes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  .tours-routes-header {
+  margin-bottom: 40px;
+}
+
+    .tours-routes-header h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.tours-routes-header p {
+  font-size: 16px;
+}
+
+  .tour-card-item {
+   
+    transform-origin: center top;
+  }
+
+  .tour-card-item .tour-card-price,
+  .tour-card-item .tour-card-days,
+  .tour-card-item .tour-card-location {
+    font-size: 13px;
+  }
+
+  .tour-card-item button {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+}
+
+@media (max-width: 767px) {
+    .tours-routes-container {
+  padding: 20px 20px 40px;
+}
+  .tours-routes-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+   .tours-routes-header {
+  margin-bottom: 30px;
+}
+    .tours-routes-header h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.tours-routes-header p {
+  font-size: 14px;
+}
+
+  .tour-card-item {
+    transform: scale(1);
+    width: 100%;
+  }
+
+}
